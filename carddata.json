@@ -1,0 +1,19 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "title": "View Map",
+      "route": "/map"
+    },
+    {
+      "id": 2,
+      "title": "User Locations",
+      "route": "/locations"
+    },
+    {
+      "id": 3,
+      "title": "Statistics",
+      "route": "/stats"
+    }
+  ]
+}
