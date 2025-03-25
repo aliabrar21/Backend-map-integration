@@ -37,27 +37,27 @@ const sampleData =
         {
             "id": 1,
             "popupText": "Delhi",
-            "imageUrl": "https://example.com/delhi.jpg"
+            "imageUrl": "https://tse2.mm.bing.net/th?id=OIP.e1cY5kZkgEkPrZxP4CQQfAHaE7&pid=Api&P=0&h=180"
         },
         {
             "id": 2,
             "popupText": "Mumbai",
-            "imageUrl": "https://example.com/mumbai.jpg"
+            "imageUrl": "https://tse3.mm.bing.net/th?id=OIP.UVasaYs2knTBo_bd1-pfpwHaFg&pid=Api&P=0&h=180"
         },
         {
             "id": 3,
             "popupText": "Bangalore",
-            "imageUrl": "https://example.com/bangalore.jpg"
+            "imageUrl": "https://tse3.mm.bing.net/th?id=OIP.IYutKgeTsRQREp8v5kzd6gHaE8&pid=Api&P=0&h=180"
         },
         {
             "id": 4,
             "popupText": "Kolkata",
-            "imageUrl": "https://example.com/kolkata.jpg"
+            "imageUrl": "https://tse1.mm.bing.net/th?id=OIP.cFA_teFDqXF7YFdxh5B7aAHaE7&pid=Api&P=0&h=180"
         },
         {
             "id": 5,
             "popupText": "Hyderabad",
-            "imageUrl": "https://example.com/hyderabad.jpg"
+            "imageUrl": "https://tse2.mm.bing.net/th?id=OIP.1g_PjPkuToYML-RxxLgcWgHaHa&pid=Api&P=0&h=180"
         }
     ]
 }
