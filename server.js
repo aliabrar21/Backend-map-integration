@@ -1,17 +1,29 @@
 import express from "express";
 import cors from "cors";
 import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
+import cookieParser from 'cookie-parser'
 
-import authenticateToken from "./middleware/auths.js";
-import SampleDashboardData from "./carddata.json" assert { type: "json" };
+import authenticateToken from "./middleware/authenticationMiddleware.js";
 
-dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors()); // Enable CORS for frontend requests
+app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser())
+
+app.use(
+    cors({
+        origin: ["http://localhost:3002", "http://localhost:5000"], // ✅ Allow frontend and backend
+        methods: ["GET", "POST", "PUT", "PATCH"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+        credentials: true, // ✅ Allow cookies & auth headers
+    })
+);
+
+
+app.options("*", cors());
 
 const users = [
     { id: 1, username: "Adnan Ali", password: "adnan@123" },
@@ -19,6 +31,25 @@ const users = [
     { id: 3, username: "Aquib", password: "aquib@123" }
 ];
 
+const sampleData = {
+    "cards": [
+        {
+            "id": 1,
+            "title": "View Map",
+            "route": "/map"
+        },
+        {
+            "id": 2,
+            "title": "User Locations",
+            "route": "/locations"
+        },
+        {
+            "id": 3,
+            "title": "Statistics",
+            "route": "/stats"
+        }
+    ]
+}
 const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret";
 
 app.get("/", (req, res) => {
@@ -37,7 +68,7 @@ app.post("/api/login", async (req, res) => {
     const token = jwt.sign(
         { userId: user.id, username: user.username },
         JWT_SECRET,
-        { expiresIn: "1h" }
+        { expiresIn: "12h" }
     );
 
     res.json({ message: "Login successful", token });
@@ -45,7 +76,7 @@ app.post("/api/login", async (req, res) => {
 
 // ✅ Dashboard API
 app.get("/api/dashboard", authenticateToken, (req, res) => {
-    res.json({ cards: SampleDashboardData });
+    res.json({ cards: sampleData });
 });
 
 // ✅ Map API (India default location)
