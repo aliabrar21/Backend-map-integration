@@ -31,22 +31,33 @@ const users = [
     { id: 3, username: "Aquib", password: "aquib@123" }
 ];
 
-const sampleData = {
+const sampleData =
+    {
     "cards": [
         {
             "id": 1,
-            "title": "View Map",
-            "route": "/map"
+            "popupText": "Delhi",
+            "imageUrl": "https://example.com/delhi.jpg"
         },
         {
             "id": 2,
-            "title": "User Locations",
-            "route": "/locations"
+            "popupText": "Mumbai",
+            "imageUrl": "https://example.com/mumbai.jpg"
         },
         {
             "id": 3,
-            "title": "Statistics",
-            "route": "/stats"
+            "popupText": "Bangalore",
+            "imageUrl": "https://example.com/bangalore.jpg"
+        },
+        {
+            "id": 4,
+            "popupText": "Kolkata",
+            "imageUrl": "https://example.com/kolkata.jpg"
+        },
+        {
+            "id": 5,
+            "popupText": "Hyderabad",
+            "imageUrl": "https://example.com/hyderabad.jpg"
         }
     ]
 }
